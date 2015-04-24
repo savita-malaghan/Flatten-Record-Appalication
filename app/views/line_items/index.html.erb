@@ -1,0 +1,29 @@
+<h1>Listing line_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Total</th>
+      <th>Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @line_items.each do |line_item| %>
+      <tr>
+        <td><%= line_item.description %></td>
+        <td><%= line_item.total %></td>
+        <td><%= line_item.order_id %></td>
+        <td><%= link_to 'Show', customer_order_line_item_path(@customer,@order,line_item) %></td>
+        <td><%= link_to 'Edit', edit_customer_order_line_item_path(@customer,@order,line_item) %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Line item', new_customer_order_line_item_path(@customer,@order,@line_item) %>
