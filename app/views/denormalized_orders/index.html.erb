@@ -1,0 +1,23 @@
+<h1>Listing customers</h1>
+
+<table border="1">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @demodularized_orders.each do |customer| %>
+      <tr>
+        <td><%= customer.customer_name %></td>
+        <td><%= customer.total %></td>
+        <td><%= customer.line_item_description %></td>
+        <td><%= customer.line_item_total %></td>
+        <td><%= customer.discount %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

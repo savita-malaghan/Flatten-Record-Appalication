@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root :to => "customers#index"
+  resources :denormalized_orders
   resources :customers do
     resources  :orders do
       resources :line_items
